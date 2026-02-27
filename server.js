@@ -1,3 +1,5 @@
+require('./utils').loadEnv();
+
 require('./process').crashHandlers();
 
 const nodeApp = require('../Node-App');
