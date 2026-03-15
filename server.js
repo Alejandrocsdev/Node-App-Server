@@ -20,7 +20,7 @@ const start = async () => {
 
   // Routes
   app.use(silence);
-  app.get('/', (req, res) => res.json({ status: 'ok' }));
+  app.get('/', (req, res) => res.json({ status: 'ok_test' }));
   app.use('/api', routes);
 
   // Request error handling
