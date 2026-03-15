@@ -26,8 +26,7 @@ jobs:
             cd /home/alex/Documents/Node-App-Server
 
             echo "Updating code"
-            git fetch origin --quiet
-            git reset --hard origin/main
+            git pull origin main --quiet
 
             echo "Restarting server"
             pm2 restart node-app-server
