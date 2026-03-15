@@ -18,16 +18,16 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
 
           script: |
+            set -e
+
             export NVM_DIR="$HOME/.nvm"
             [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
             cd /home/alex/Documents/Node-App-Server
 
-            echo "Pulling latest code"
-            git pull origin main
-
-            echo "Installing dependencies"
-            npm install --production
+            echo "Updating code"
+            git fetch origin
+            git reset --hard origin/main
 
             echo "Restarting server"
             pm2 restart node-app-server
